@@ -1,3 +1,13 @@
-<p>
-  profile-form works!
-</p>
+<div [formGroup]="form">
+	<label for="first-name">First name</label>
+	<input type="text" formControlName="firstName" id="first-name" />
+
+	<label for="last-name">Last name</label>
+	<input type="text" formControlName="lastName" id="last-name" />
+
+	<label for="email">Email</label>
+	<input type="email" formControlName="email" id="email" />
+	<div *ngIf="emailControl.touched && emailControl.hasError('required')" class="error">
+		Email is required !
+	</div>
+</div>
