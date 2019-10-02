@@ -1,7 +1,16 @@
+<h1>Sign up form</h1>
 <form [formGroup]="signupForm" (submit)="onSubmit()">
 	<app-profile-form formControlName="profile"></app-profile-form>
 	<app-password-form formControlName="password"></app-password-form>
 	<div>
-		<button type="submit">Sign up</button>
+		<button type="submit" [disabled]="!signupForm.valid">Sign up</button>
 	</div>
 </form>
+
+<div>
+	signupForm is {{signupForm.valid ? 'Valid' : 'Invalid'}}
+</div>
+
+<pre>
+	{{signupForm.value | json}}
+</pre>
