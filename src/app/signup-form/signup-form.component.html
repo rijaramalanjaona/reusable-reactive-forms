@@ -1,0 +1,7 @@
+<form [formGroup]="signupForm" (submit)="onSubmit()">
+	<app-profile-form formControlName="profile"></app-profile-form>
+	<app-password-form formControlName="password"></app-password-form>
+	<div>
+		<button type="submit">Sign up</button>
+	</div>
+</form>
